@@ -1,0 +1,32 @@
+---
+const lista = ["uno", "dos", "tres", "cuatro", "cinco"];
+const est = "estilo-de-la-lista-de-items";
+---
+
+<ul>
+    {lista.map((item) => <li class={est}>{item}</li>)}
+</ul>
+
+<!-- Esta iteración también se puede hacer mediante lo que se conoce como "Fragments" -->
+
+<ul>
+    {
+        lista.map((item) => (
+            <>
+                <li class={est}>{item}</li>
+            </>
+        ))
+    }
+</ul>
+<style>
+    .estilo-de-la-lista-de-items {
+        color: cyan;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+
+<!--En caso de que tengamos clases con nombres muy largos podemos declarar constantes que guarden el nombre de la clase
+y pasárselo a los componentes según la necesidad que tengamos, entre los signos de {} como se puede observar en el ejemplo 
+de arriba -->
+
