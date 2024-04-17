@@ -4,6 +4,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import Card from "../components/Card.astro";
+import Footer from "./Footer.astro";
 ---
 
 <!doctype html>
@@ -19,7 +21,9 @@ const { title } = Astro.props;
 	<body>
 		<h1>Cabecera<span class="text-gradient">Menu</span></h1>
 		<slot />
+
 	</body>
+	
 </html>
 <style is:global>
 	:root {
@@ -30,12 +34,12 @@ const { title } = Astro.props;
 			45deg,
 			rgb(var(--accent)),
 			rgb(var(--accent-light)) 30%,
-			white 60%
+			rgb(255, 255, 255) 60%
 		);
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+		background: #b2b2b2;
 		background-size: 224px;
 	}
 	code {
