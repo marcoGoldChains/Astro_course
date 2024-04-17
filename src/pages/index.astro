@@ -1,14 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Footer from '../layouts/Footer.astro';
-import Titulo from '../components/Titulo.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Footer from "../layouts/Footer.astro";
+import Titulo from "../components/Titulo.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Bienvenido a Astro.">
 	<Titulo />
-	<Card nombre='Marco' ocupacion='Estudiante'/>
-	<Card nombre='David' ocupacion='Programador'/>
+	<Card nombre="Marco" ocupacion="Estudiante" avatar={true} />
+	<Card nombre="David" ocupacion="Programador" avatar={false}>
+		<p slot="desc">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+			labore tenetur odit ratione sed soluta quas natus suscipit, laborum
+			eius hic, quis delectus saepe, maxime voluptas eum animi rem
+			praesentium?
+		</p>
+	</Card>
 	<Footer />
 </Layout>
-

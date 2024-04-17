@@ -1,20 +1,29 @@
-<!--Etiquetas dinámicas -->
-<!-- Estas se utilizan para remplazar los tradicionales div, y que el contenido de la página sea más
-    legible y cómodo de trabajar -->
 ---
 const CardV = 'div';
 const Container = 'div';
+
 export interface Props {
     nombre: string;
     ocupacion: string;
+    avatar: boolean;
 }
-const { nombre, ocupacion } = Astro.props
+const { nombre, ocupacion, avatar } = Astro.props
 ---
+<script>
+const btn = document.getElementById('btn');
+btn?.addEventListener('click', function(){
+    alert("Hola!");
+})
+</script>
+<button id="btn">Click</button>
 <CardV class="card">
-    <img src="images/avatar1.png" alt="imagen" style="width: 100%">
+    <img src={avatar ? 'images/avatar1.png' : 'images/avatar2.png'} alt="imagen" style="width: 100%">
     <Container class="container">
         <h4>{nombre}</h4>
         <p>{ocupacion}</p>
+        <slot name="desc">
+            <p style="font-weight: bold;">Contenido de la descripción</p>
+        </slot>
     </Container>
 </CardV>
 
