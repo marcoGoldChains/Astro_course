@@ -4,8 +4,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import Card from "../components/Card.astro";
-import Footer from "./Footer.astro";
+import Card from "@components/Card.astro";
+import Footer from "@layouts/Footer.astro";
 ---
 
 <!doctype html>
@@ -22,6 +22,8 @@ import Footer from "./Footer.astro";
 		<h1>Cabecera<span class="text-gradient">Menu</span></h1>
 		<a href="/">Home</a>
 		<a href="/blog/123">Blog</a>
+		<a href="/autores/Stephen King/It">Autor</a>
+		<a href="/terminos">Terminos</a>
 		<slot />
 
 	</body>

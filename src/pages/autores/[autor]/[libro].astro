@@ -1,0 +1,10 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+const {autor, libro} = Astro.params;
+
+---
+
+<Layout title="Autores">
+    <h2>El autor es: <b>{autor}</b></h2>
+    <h2>El libro es: <b>{libro}</b></h2>
+</Layout>
